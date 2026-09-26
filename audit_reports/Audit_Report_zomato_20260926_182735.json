@@ -1,0 +1,226 @@
+{
+  "company_name": "zomato",
+  "total_claims": 18,
+  "supported_claims": 10,
+  "partially_supported_claims": 3,
+  "unsupported_claims": 5,
+  "unverifiable_claims": 0,
+  "overall_confidence": 0.5555555555555556,
+  "overall_pass": false,
+  "slide_audits": [
+    {
+      "slide_number": 1,
+      "slide_title": "Company Overview",
+      "claims": [],
+      "slide_pass": true
+    },
+    {
+      "slide_number": 2,
+      "slide_title": "Why Choose Marsh",
+      "claims": [],
+      "slide_pass": true
+    },
+    {
+      "slide_number": 3,
+      "slide_title": "Policy Benefits Mapped to Zomato Risks",
+      "claims": [
+        {
+          "claim_text": "Day‑1 cover for chronic conditions (asthma, hypertension, high cholesterol, diabetes) provides coverage without a waiting period.",
+          "verdict": "supported",
+          "confidence_score": 0.8893415331840515,
+          "source_clause": "Now get Day 1 cover for listed 7 chronic conditions\nwith zero waiting period:\n• Asthma                                                         FIRST TIME IN THE INDUSTRY    •   High        Blood              Pressure                                          ADVANCED HEALTH CHECKUP    •   High       ",
+          "source_document": "ABHI Product Brochure",
+          "source_chunk_similarity": 0.8893415331840515,
+          "verification_method": "cosine_similarity",
+          "notes": "High similarity match (score: 0.889)"
+        },
+        {
+          "claim_text": "Pre‑existing disease waiting period is 36 months.",
+          "verdict": "supported",
+          "confidence_score": 1.0,
+          "source_clause": "36 months waiting period on pre-existing diseases",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7631221413612366,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt explicitly states a 36‑month waiting period for pre‑existing diseases, matching the claim."
+        },
+        {
+          "claim_text": "Infinite Benefit adds 100 % of base sum insured at no extra cost.",
+          "verdict": "partially_supported",
+          "confidence_score": 0.8,
+          "source_clause": "\"Infinite Benefit* 100% of base sum insured added\nAccumulate 100% of base sum insured year after year, infinite times, irrespective of claims made\"",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7215702533721924,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt confirms that Infinite Benefit adds 100% of the base sum insured and accumulates it year after year, but it does not explicitly state that this addition comes at no extra cost. Therefore the claim is partially supported."
+        },
+        {
+          "claim_text": "The policy includes a 24 × 7 multilingual call centre.",
+          "verdict": "unsupported",
+          "confidence_score": 0.99,
+          "source_clause": "• Up to INR 15 Lac Base Sum Insured: INR 800 per day; Maximum INR 4,800\nShared Accommodation                                   • Above INR 15 Lac Base Sum Insured: INR 1,000 per day; Maximum INR. 6,000\nSecond Medical Opinion      Once for any condition in a Policy Year.\ne-consultation               ",
+          "source_document": "Niva Bupa Product Brochure",
+          "source_chunk_similarity": 0.6236136555671692,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt does not mention a 24 × 7 multilingual call centre; it only lists coverage details and e-consultation options."
+        },
+        {
+          "claim_text": "The policy has approximately 16,000 cashless provider network and a 98 % claim‑payout ratio.",
+          "verdict": "supported",
+          "confidence_score": 1.0,
+          "source_clause": "~16,000 cashless healthcare provider network## 98% health claims payout ratio",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.6778204441070557,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt explicitly states both the approximate number of cashless provider network (~16,000) and the claim‑payout ratio (98%)."
+        }
+      ],
+      "slide_pass": false
+    },
+    {
+      "slide_number": 4,
+      "slide_title": "Coverage Comparison",
+      "claims": [
+        {
+          "claim_text": "ABHI provides day‑1 chronic condition cover with no waiting period for the listed four conditions.",
+          "verdict": "partially_supported",
+          "confidence_score": 0.9,
+          "source_clause": "Now get Day 1 cover for listed 7 chronic conditions with zero waiting period:\n• Asthma\n• High Blood Pressure\n• High Cholesterol\n• Diabetes",
+          "source_document": "ABHI Product Brochure",
+          "source_chunk_similarity": 0.7342460751533508,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt confirms day‑1 cover with zero waiting period for the four conditions mentioned (Asthma, High Blood Pressure, High Cholesterol, Diabetes), but it also states that there are seven chronic conditions covered, which is not aligned with the claim’s wording of only four conditions."
+        },
+        {
+          "claim_text": "Care Health has a 36‑month pre‑existing disease waiting period.",
+          "verdict": "supported",
+          "confidence_score": 0.99,
+          "source_clause": "Pre-Existing Diseases 36 months",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7091226577758789,
+          "verification_method": "llm_verification",
+          "notes": "The Care Health Product Brochure explicitly states a 36‑month waiting period for pre‑existing diseases, directly matching the claim."
+        },
+        {
+          "claim_text": "Care Health offers an optional domiciliary hospitalization add‑on.",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "This benefit is offered through Cumulative Bonus Booster under add‑on policy ‘Care Advanced’. This is an optional benefit and available on payment of additional premium.",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.7521007061004639,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt explicitly states that domiciliary hospitalization is offered as an optional benefit under the add‑on policy ‘Care Advanced’ and requires payment of additional premium."
+        },
+        {
+          "claim_text": "HDFC ERGO Optima Secure+ offers a 100% SI uplift (Infinite Benefit).",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "Inﬁnite Beneﬁt* 100% of base sum insured added",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.8082460165023804,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt explicitly states that the Infinite Benefit feature adds 100% of the base sum insured, which directly supports the claim that the plan offers a 100% SI uplift."
+        },
+        {
+          "claim_text": "HDFC ERGO Optima Secure+ provides coverage at 16,000 cashless hospitals.",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "~16,000 cashless healthcare provider network##",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7915493845939636,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt explicitly states a network of approximately 16,000 cashless healthcare providers, which directly supports the claim."
+        },
+        {
+          "claim_text": "HDFC ERGO Optima Secure+ has a 98% payout.",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "98% health claims payout ratio~",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7953466176986694,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt explicitly states a 98% health claims payout ratio for HDFC ERGO Optima Secure+, directly supporting the claim."
+        },
+        {
+          "claim_text": "HDFC ERGO Optima Secure+ has a 24×7 call centre.",
+          "verdict": "supported",
+          "confidence_score": 0.99,
+          "source_clause": "24x7 call centre servicing in 10 languages",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7767616510391235,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt explicitly states \"24x7 call centre servicing in 10 languages\", confirming the claim that HDFC ERGO Optima Secure+ has a 24×7 call centre."
+        },
+        {
+          "claim_text": "All three policies provide group medical structures.",
+          "verdict": "unsupported",
+          "confidence_score": 0.95,
+          "source_clause": "Pre-Existing Diseases                       36 months\nABOUT US\nCare Health Insurance is a specialized health insurer offering products in the retail segment for Health\nInsurance, Top-up Coverage, Personal Accident, Maternity, International Travel Insurance and Critical\nIllness along with Group Healt",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.6370315551757812,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt only explicitly mentions group medical structures for Care Health, while the HDFC excerpts provided do not reference any group medical provisions."
+        },
+        {
+          "claim_text": "HDFC ERGO Optima Secure+ offers the broadest network and immediate SI boost.",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "~16,000 cashless healthcare provider network## … Infinite Benefit* 100% of base sum insured added",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7892358899116516,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt states that the plan has a cashless network of ~16,000 providers, indicating a broad network, and it also mentions an ‘Infinite Benefit’ feature that adds 100% of the base sum insured, which is an immediate SI boost."
+        }
+      ],
+      "slide_pass": false
+    },
+    {
+      "slide_number": 5,
+      "slide_title": "Recommended Policy",
+      "claims": [
+        {
+          "claim_text": "Select HDFC ERGO Optima Secure+ as the primary group medical plan.",
+          "verdict": "unsupported",
+          "confidence_score": 0.95,
+          "source_clause": "Introduction\nWe all know the importance of having health insurance for ourselves and our family,\nbut we still make inﬁnite excuses to not buy it.\nWith HDFC ERGO's Optima Secure+, experience a health plan designed to go\nbeyond limits, oﬀering enhanced coverage, Inﬁnite Beneﬁt feature and complete\npea",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.8368866443634033,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt describes the HDFC ERGO Optima Secure+ product and its features, but it does not mention selecting it as a primary group medical plan or any group plan designation."
+        },
+        {
+          "claim_text": "Leverage Infinite Beneft* to automatically double the base sum insured for accidental injury claims.",
+          "verdict": "unsupported",
+          "confidence_score": 0.95,
+          "source_clause": "Base Sum                       Automatic            Admissible\nSecure     Inﬁnite                Claim                  Utilisation  Number    Insured                          Restore               Claim                      Beneﬁt    Beneﬁt*            Amount                 of Sum of Claims     (B",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7495812177658081,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt does not state that Infinite Benefit* automatically doubles the base sum insured for accidental injury claims; it only mentions adding up to 100% of the base sum insured after each policy year and an automatic restore benefit, without specifying a doubling effect for accidental injury."
+        },
+        {
+          "claim_text": "Utilise the 16,000‑hospital cashless network for rapid treatment of food‑borne or traffic‑related incidents.",
+          "verdict": "partially_supported",
+          "confidence_score": 0.7,
+          "source_clause": "Cashless Transactions\nGet treatment on a cashless basis across ~16,000 cashless healthcare provider network**",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.6216968894004822,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt confirms a ~16,000 cashless healthcare provider network, but it does not specify that this network is applicable for food‑borne or traffic‑related incidents, nor does it mention rapid treatment for those specific cases."
+        },
+        {
+          "claim_text": "Benefit from 24 × 7 multilingual support to serve shift‑based and gig workers across India.",
+          "verdict": "unsupported",
+          "confidence_score": 0.95,
+          "source_clause": "Trivandrum, Ujjain\nZone 7: Rest of India\nNote:\n1. Cities above means adjoining cities also\n2. Delhi-NCR, Mumbai (MMR) is as defined by Government\nWho Are Covered                               Self, Spouse/ Live-in partner/ Same sex partner, Son, Daughter,\n(Relationship with respect to the Proposer) ",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.631000280380249,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt contains no reference to 24×7 multilingual support or any customer service provisions. Therefore the claim is not supported by the provided text."
+        }
+      ],
+      "slide_pass": false
+    }
+  ],
+  "summary": "Audited 18 claims across 5 slides.\n✅ Supported: 10 | ⚠️ Partially Supported: 3\n❌ Unsupported: 5 | ❓ Unverifiable: 0\nOverall Confidence: 56%\n⚠️ REVIEW NEEDED — Some claims require advisor review before client delivery."
+}
