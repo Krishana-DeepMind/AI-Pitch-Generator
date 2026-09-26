@@ -41,7 +41,7 @@ Create a pitch deck with exactly 4-5 slides as a JSON object. The deck must cove
 
 4. **Slide 4 - Coverage Comparison** (optional): If multiple policies are available, briefly compare their key differentiators relevant to this company.
 
-5. **Final Slide - Recommended Policy**: Name ONE recommended policy and explain WHY it's the best fit for this company's specific risk profile. The recommendation must be justified based on the company's risks and the policy's actual coverage.
+5. **Final Slide - Recommended Policy**: Name ONE recommended policy and explain WHY it's the best fit for this company's specific risk profile. The recommendation must be justified based on the company's risks and the policy's actual coverage. IMPORTANT: State each specific benefit or feature as a separate, atomic claim (one benefit per bullet point/sentence) rather than bundling multiple benefits into a single compound claim. This makes each claim independently verifiable.
 
 ## Output Format
 Return a JSON object with this structure:

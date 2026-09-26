@@ -304,6 +304,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="claim-meta">
                             <span class="badge-mono">${ca.confidence_score.toFixed(2)}</span>
                             <span class="badge-mono" style="text-transform: uppercase">${ca.verification_method}</span>
+                            ${(ca.verification_method === 'cosine_similarity_fallback' || ca.verification_method === 'llm_verification_failed') 
+                                ? '<span class="badge-mono warn" style="background: var(--color-status-fail-bg); color: var(--color-status-fail);" title="API Rate Limit/Error">⚠️ DEGRADED</span>' 
+                                : ''}
                             <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>

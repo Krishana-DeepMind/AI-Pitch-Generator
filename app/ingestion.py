@@ -43,7 +43,8 @@ def extract_text_from_pdf(pdf_path: str) -> List[Dict[str, any]]:
     pages = []
     doc = pymupdf.open(pdf_path)
     for page_num, page in enumerate(doc):
-        text = page.get_text().strip()
+        # Use sort=True to preserve logical reading order and tabular rows better
+        text = page.get_text("text", sort=True).strip()
         if text:
             pages.append({
                 "page_number": page_num + 1,
@@ -69,53 +70,65 @@ def chunk_text(
         return []
     
     chunks = []
-    text = text.strip()
     
-    # Split into sentences first for cleaner boundaries
-    sentences = []
-    current = ""
-    for char in text:
-        current += char
-        if char in ".!?\n" and len(current.strip()) > 10:
-            sentences.append(current.strip())
+    # Split by newlines first to preserve tabular rows
+    raw_lines = text.split("\n")
+    segments = []
+    
+    for line in raw_lines:
+        line = line.strip()
+        if not line:
+            continue
+            
+        # If a line is very long, break it into sentences
+        if len(line) > 200:
             current = ""
-    if current.strip():
-        sentences.append(current.strip())
-    
-    # Build chunks from sentences
-    current_chunk = ""
+            for char in line:
+                current += char
+                if char in ".!?" and len(current.strip()) > 20:
+                    segments.append(current.strip())
+                    current = ""
+            if current.strip():
+                segments.append(current.strip())
+        else:
+            segments.append(line)
+            
+    # Group segments into chunks
+    current_chunk_segments = []
+    current_length = 0
     chunk_idx = 0
     
-    for sentence in sentences:
-        if len(current_chunk) + len(sentence) <= chunk_size:
-            current_chunk += " " + sentence if current_chunk else sentence
+    for seg in segments:
+        if current_length + len(seg) + 1 <= chunk_size or not current_chunk_segments:
+            current_chunk_segments.append(seg)
+            current_length += len(seg) + 1
         else:
-            if current_chunk:
-                chunks.append({
-                    "text": current_chunk.strip(),
-                    "document_name": document_name,
-                    "chunk_index": chunk_idx,
-                    "page_number": page_number,
-                })
-                chunk_idx += 1
-                
-                # Keep overlap from end of current chunk
-                overlap_text = current_chunk[-chunk_overlap:] if len(current_chunk) > chunk_overlap else ""
-                current_chunk = overlap_text + " " + sentence
-            else:
-                # Single sentence bigger than chunk_size — take it as-is
-                chunks.append({
-                    "text": sentence.strip(),
-                    "document_name": document_name,
-                    "chunk_index": chunk_idx,
-                    "page_number": page_number,
-                })
-                chunk_idx += 1
-                current_chunk = ""
-    
-    if current_chunk.strip():
+            # Save chunk
+            chunks.append({
+                "text": "\n".join(current_chunk_segments).strip(),
+                "document_name": document_name,
+                "chunk_index": chunk_idx,
+                "page_number": page_number,
+            })
+            chunk_idx += 1
+            
+            # Calculate overlap by keeping the last few segments that fit in chunk_overlap
+            overlap_segments = []
+            overlap_length = 0
+            for prev_seg in reversed(current_chunk_segments):
+                if overlap_length + len(prev_seg) + 1 <= chunk_overlap:
+                    overlap_segments.insert(0, prev_seg)
+                    overlap_length += len(prev_seg) + 1
+                else:
+                    break
+                    
+            # Start new chunk with overlap + current segment
+            current_chunk_segments = overlap_segments + [seg]
+            current_length = overlap_length + len(seg) + 1
+            
+    if current_chunk_segments:
         chunks.append({
-            "text": current_chunk.strip(),
+            "text": "\n".join(current_chunk_segments).strip(),
             "document_name": document_name,
             "chunk_index": chunk_idx,
             "page_number": page_number,

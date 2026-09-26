@@ -128,13 +128,37 @@ async def generate_pitch(request: PitchRequest):
         if request.selected_policies:
             filter_docs = request.selected_policies
         
-        relevant_chunks = _retriever.search_text(
+        # Two-stage retrieval: fetch top-20 candidate pool
+        candidate_chunks = _retriever.search_text(
             query_text=query_text,
-            top_k=settings.top_k_chunks,
+            top_k=20,
             threshold=0.0,
             filter_documents=filter_docs,
         )
-        logger.info(f"  Retrieved {len(relevant_chunks)} relevant chunks")
+        
+        # Dedupe: filter out highly overlapping adjacent chunks
+        relevant_chunks = []
+        selected_indices = set()
+        for chunk in candidate_chunks:
+            doc = chunk.get("document_name")
+            idx = chunk.get("chunk_index")
+            # Skip if immediate neighbor chunk is already selected to maximize diversity
+            if (doc, idx - 1) in selected_indices or (doc, idx + 1) in selected_indices:
+                continue
+            relevant_chunks.append(chunk)
+            selected_indices.add((doc, idx))
+            if len(relevant_chunks) >= settings.top_k_chunks:
+                break
+                
+        # Fallback if filtered too aggressively
+        if len(relevant_chunks) < settings.top_k_chunks:
+            for chunk in candidate_chunks:
+                if chunk not in relevant_chunks:
+                    relevant_chunks.append(chunk)
+                if len(relevant_chunks) >= settings.top_k_chunks:
+                    break
+                    
+        logger.info(f"  Retrieved {len(relevant_chunks)} relevant chunks after deduping from {len(candidate_chunks)} candidates")
         
         # Step 3: Generate marketing pitch
         logger.info(f"[Pipeline] Step 3: Generating marketing pitch")

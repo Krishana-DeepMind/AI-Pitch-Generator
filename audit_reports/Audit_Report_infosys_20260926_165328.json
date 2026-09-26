@@ -1,0 +1,175 @@
+{
+  "company_name": "infosys",
+  "total_claims": 13,
+  "supported_claims": 9,
+  "partially_supported_claims": 0,
+  "unsupported_claims": 4,
+  "unverifiable_claims": 0,
+  "overall_confidence": 0.6923076923076923,
+  "overall_pass": false,
+  "slide_audits": [
+    {
+      "slide_number": 1,
+      "slide_title": "Company Overview",
+      "claims": [],
+      "slide_pass": true
+    },
+    {
+      "slide_number": 2,
+      "slide_title": "Why Choose Marsh",
+      "claims": [],
+      "slide_pass": true
+    },
+    {
+      "slide_number": 3,
+      "slide_title": "Policy Benefits Mapped to Infosys Risks",
+      "claims": [
+        {
+          "claim_text": "Day‑1 cover for asthma, high blood pressure, high cholesterol and diabetes is provided by ABHI.",
+          "verdict": "supported",
+          "confidence_score": 0.99,
+          "source_clause": "Now get Day 1 cover for listed 7 chronic conditions with zero waiting period: • Asthma • High Blood Pressure • High Cholesterol • Diabetes",
+          "source_document": "ABHI Product Brochure",
+          "source_chunk_similarity": 0.7737629413604736,
+          "verification_method": "llm_verification",
+          "notes": "The ABHI brochure explicitly states that Day‑1 cover with zero waiting period is available for Asthma, High Blood Pressure, High Cholesterol, and Diabetes."
+        },
+        {
+          "claim_text": "ABCD Chronic Care add‑on from HDFC provides hospitalization coverage for asthma, high blood pressure, high cholesterol and diabetes starting on day 31.",
+          "verdict": "supported",
+          "confidence_score": 1.0,
+          "source_clause": "Covers hospitalisation expenses for Asthma, Blood pressure, Cholesterol and Diabetes from the 31st day",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.8141862154006958,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt explicitly states that the ABCD Chronic Care add‑on covers hospitalization expenses for Asthma, Blood pressure, Cholesterol and Diabetes from the 31st day, matching the claim verbatim."
+        },
+        {
+          "claim_text": "Optima Wellbeing add‑on from HDFC offers outpatient benefits for musculoskeletal and mental‑health issues.",
+          "verdict": "unsupported",
+          "confidence_score": 0.95,
+          "source_clause": "Covers various outpatient beneﬁts",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.8245274424552917,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt states that Optima Wellbeing (Add‑on) covers various outpatient benefits, but it does not specify musculoskeletal or mental‑health issues. Therefore the claim is not supported by the provided text."
+        },
+        {
+          "claim_text": "Hospital Cash Benefit from HDFC pays a per‑day cash amount for each completed day of hospitalization.",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "Get a per day daily cash amount for each completed day of hospitalisation",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.752697229385376,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt explicitly states that the Hospital Cash Benefit provides a per‑day cash amount for each completed day of hospitalization, matching the claim."
+        },
+        {
+          "claim_text": "Pre‑existing disease waiting period of 36 months applies under Care Health.",
+          "verdict": "supported",
+          "confidence_score": 0.99,
+          "source_clause": "[Care Health Product Brochure]: Pre-Existing Diseases 36 months",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7606834173202515,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt explicitly states that Care Health has a 36‑month waiting period for pre‑existing diseases."
+        }
+      ],
+      "slide_pass": false
+    },
+    {
+      "slide_number": 4,
+      "slide_title": "Coverage Comparison",
+      "claims": [
+        {
+          "claim_text": "Care Health has a 36‑month pre‑existing disease waiting period.",
+          "verdict": "supported",
+          "confidence_score": 0.99,
+          "source_clause": "36 months waiting period on pre-existing diseases",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7091226577758789,
+          "verification_method": "llm_verification",
+          "notes": "Both the HDFC and Care Health excerpts explicitly state a 36‑month waiting period for pre‑existing diseases."
+        },
+        {
+          "claim_text": "Care Health does not provide explicit chronic‑condition Day‑1 cover.",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "Now get Day 1 cover for listed 7 chronic conditions\nwith zero waiting period:\n• Asthma                                                         FIRST TIME IN THE INDUSTRY    •   High        Blood              Pressure                                          ADVANCED HEALTH CHECKUP    •   High       ",
+          "source_document": "ABHI Product Brochure",
+          "source_chunk_similarity": 0.708945631980896,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt from Care Health’s brochure does not mention any explicit Day‑1 cover for chronic conditions, whereas the ABHI brochure does. Therefore the claim that Care Health does not provide such cover is supported by the provided text."
+        },
+        {
+          "claim_text": "ABHI provides immediate (Day‑1) coverage for asthma, hypertension, cholesterol and diabetes.",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "Now get Day 1 cover for listed 7 chronic conditions with zero waiting period: • Asthma • High Blood Pressure • High Cholesterol • Diabetes",
+          "source_document": "ABHI Product Brochure",
+          "source_chunk_similarity": 0.7575724720954895,
+          "verification_method": "llm_verification",
+          "notes": "The ABHI Product Brochure explicitly states \"Now get Day 1 cover for listed 7 chronic conditions with zero waiting period: Asthma, High Blood Pressure, High Cholesterol, Diabetes\", which directly supports the claim that ABHI provides immediate (Day‑1) coverage for these conditions."
+        },
+        {
+          "claim_text": "ABHI does not list add‑ons for outpatient or cash benefit.",
+          "verdict": "unsupported",
+          "confidence_score": 0.99,
+          "source_clause": "Optima Wellbeing (Add-on) Covers various outpatient beneﬁts\nmy: health Hospital Cash Beneﬁt (Add-on) Get a per day daily cash amount for each completed day of hospitalisation",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.6168866157531738,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt explicitly lists add‑ons for outpatient benefits (Optima Wellbeing) and cash benefits (my: health Hospital Cash Benefit), contradicting the claim that ABHI does not list such add‑ons."
+        },
+        {
+          "claim_text": "HDFC ERGO’s ABCD Chronic Care adds hospitalization from day 31 for asthma, hypertension, cholesterol and diabetes.",
+          "verdict": "supported",
+          "confidence_score": 1.0,
+          "source_clause": "ABCD Chronic Care Covers hospitalisation expenses for Asthma, Blood pressure, Cholesterol and Diabetes from the 31st day",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7603064775466919,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt explicitly states that ABCD Chronic Care covers hospitalization expenses for Asthma, Blood pressure, Cholesterol and Diabetes from the 31st day, matching the claim."
+        },
+        {
+          "claim_text": "HDFC ERGO’s Optima Wellbeing adds outpatient benefits.",
+          "verdict": "unsupported",
+          "confidence_score": 0.95,
+          "source_clause": "Introduction\nWe all know the importance of having health insurance for ourselves and our family,\nbut we still make inﬁnite excuses to not buy it.\nWith HDFC ERGO's Optima Secure+, experience a health plan designed to go\nbeyond limits, oﬀering enhanced coverage, Inﬁnite Beneﬁt feature and complete\npea",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.8274741768836975,
+          "verification_method": "llm_verification",
+          "notes": "The provided policy excerpt does not mention any outpatient benefits for HDFC ERGO’s Optima Wellbeing. It only discusses general coverage features, exclusions, and pricing details, with no reference to outpatient coverage."
+        },
+        {
+          "claim_text": "HDFC ERGO’s Hospital Cash Benefit provides daily cash during stay.",
+          "verdict": "unsupported",
+          "confidence_score": 0.95,
+          "source_clause": "Why Choose HDFC ERGO\n~16,000 cashless healthcare provider network##\n98% health claims payout ratio~\n`21,700 cr. worth health claims paid in last 15 years***\n1.5 cr. lives insured under health insurance°°\n24x7 call centre servicing in 10 languages\nStandard Exclusions & Waiting Periods\nStandard Exclus",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7376405596733093,
+          "verification_method": "llm_verification",
+          "notes": "The provided policy excerpt does not mention a Hospital Cash Benefit or any daily cash provision during a hospital stay."
+        },
+        {
+          "claim_text": "HDFC’s Infinite Benefit adds 100% of base sum insured at no extra cost.",
+          "verdict": "supported",
+          "confidence_score": 0.99,
+          "source_clause": "Inﬁnite Beneﬁt* 100% of base sum insured added",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.6936608552932739,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt explicitly states that the Infinite Benefit feature adds 100% of the base sum insured and that this added coverage comes at no extra cost."
+        }
+      ],
+      "slide_pass": false
+    },
+    {
+      "slide_number": 5,
+      "slide_title": "Recommended Policy",
+      "claims": [],
+      "slide_pass": true
+    }
+  ],
+  "summary": "Audited 13 claims across 5 slides.\n✅ Supported: 9 | ⚠️ Partially Supported: 0\n❌ Unsupported: 4 | ❓ Unverifiable: 0\nOverall Confidence: 69%\n⚠️ REVIEW NEEDED — Some claims require advisor review before client delivery."
+}

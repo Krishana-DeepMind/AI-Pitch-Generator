@@ -241,17 +241,23 @@ def verify_claim_with_llm(
         )
     except Exception as e:
         logger.warning(f"LLM verification failed for claim: {e}")
-        # Fall back to cosine-based judgment
+        # Fall back to cosine-based judgment since LLM failed
         best = results[0]
+        score = best["similarity_score"]
+        
+        # Since it was in the ambiguous zone to reach here, we'll conservatively 
+        # give it PARTIALLY_SUPPORTED or UNSUPPORTED rather than a technical failure.
+        verdict = AuditVerdict.PARTIALLY_SUPPORTED if score >= 0.4 else AuditVerdict.UNSUPPORTED
+        
         return ClaimAudit(
             claim_text=claim,
-            verdict=AuditVerdict.UNVERIFIABLE,
-            confidence_score=0.3,
+            verdict=verdict,
+            confidence_score=score,
             source_clause=best["text"][:300],
             source_document=best["document_name"],
-            source_chunk_similarity=best["similarity_score"],
-            verification_method="llm_verification_failed",
-            notes=f"LLM verification failed, similarity score: {best['similarity_score']:.3f}",
+            source_chunk_similarity=score,
+            verification_method="cosine_similarity_fallback",
+            notes=f"LLM verification failed (API error). Fallback to cosine score ({score:.3f}).",
         )
 
 
