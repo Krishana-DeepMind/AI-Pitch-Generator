@@ -3,5 +3,5 @@ pitch-gen/
 __pycache__/
 *.pyc
 
-data/policy_embeddings.pkl
+
 .DS_Store

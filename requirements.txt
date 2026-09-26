@@ -1,33 +1,38 @@
-# Core web framework
-fastapi==0.115.12
-uvicorn[standard]==0.34.2
+# Core web framework (API endpoints and server)
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
 
-# PDF parsing
-PyMuPDF==1.25.5
+# Data schemas, validation, and config loading
+pydantic==2.7.1
+pydantic-settings==2.2.1
 
-# Embeddings (ONNX, runs locally)
-fastembed==0.6.1
+# Environment variable management
+python-dotenv==1.0.1
 
-# LLM providers
-groq==0.25.0
-httpx==0.28.1
+# File uploads for admin endpoints
+python-multipart==0.0.9
 
-# Deck generation
-python-pptx==1.0.2
+# PDF parsing for extracting text from policies
+# PyMuPDF historically has poor wheel support for brand new Python versions
+PyMuPDF==1.24.4
 
-# Vector math
-numpy==2.2.6
+# Embeddings (Runs locally for vector search)
+fastembed==0.2.7
 
-# Data models & settings
-pydantic==2.11.3
-pydantic-settings==2.9.1
-python-dotenv==1.1.0
+# Underlying engine for fastembed (Explicitly pinned to ensure 3.11 wheel availability)
+# onnxruntime is a frequent culprit for source-compilation failures on new Pythons
+onnxruntime==1.17.1
 
-# Supabase (for persistent vector storage)
-supabase==2.15.2
+# LLM provider integration for pitch generation and claims auditing
+groq==0.8.0
+httpx==0.27.0
+tenacity==8.3.0
 
-# File uploads
-python-multipart==0.0.20
+# Deck generation (compiling the final .pptx file)
+python-pptx==0.6.23
 
-# Utilities
-tenacity==9.1.2
+# Vector math (Cosine similarity)
+numpy==1.26.4
+
+# Supabase (For persistent vector storage)
+supabase==2.4.3
