@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marsh AI Pitch Generator">
+    <title>Marsh Pitch Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="wordmark">Marsh</span>
+                <span class="divider"></span>
+                <span class="product-name">AI Pitch Generator</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Input Panel -->
+        <section class="hero-card" id="hero-panel">
+            <form id="pitch-form">
+                <div class="input-wrapper">
+                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                        <path d="M9 22v-4h6v4"></path>
+                        <path d="M8 6h.01"></path>
+                        <path d="M16 6h.01"></path>
+                        <path d="M12 6h.01"></path>
+                        <path d="M12 10h.01"></path>
+                        <path d="M12 14h.01"></path>
+                        <path d="M16 10h.01"></path>
+                        <path d="M16 14h.01"></path>
+                        <path d="M8 10h.01"></path>
+                        <path d="M8 14h.01"></path>
+                    </svg>
+                    <input type="text" id="company-name" placeholder="Enter company name (e.g. Infosys, Zomato)" required>
+                </div>
+                
+                <div class="policies-section">
+                    <label class="label-small">Ground pitch against:</label>
+                    <div class="policy-chips" id="policy-chips-container">
+                        <div class="chip-loading">Loading policies...</div>
+                    </div>
+                </div>
+
+                <button type="submit" id="generate-btn" class="btn-primary" disabled title="Enter a company name to continue">
+                    <span class="btn-text">Generate Pitch</span>
+                    <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </form>
+
+            <!-- Loading Panel (Replaces button inline) -->
+            <div id="loading-panel" class="hidden">
+                <div class="stepper">
+                    <div class="step" id="step-profile">
+                        <div class="step-circle"></div>
+                        <span class="step-label">Building Company Profile</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" id="step-retrieve">
+                        <div class="step-circle"></div>
+                        <span class="step-label">Retrieving Policy Chunks</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" id="step-generate">
+                        <div class="step-circle"></div>
+                        <span class="step-label">Generating Pitch Deck</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" id="step-audit">
+                        <div class="step-circle"></div>
+                        <span class="step-label">Auditing Claims</span>
+                    </div>
+                </div>
+                <div class="loading-status">
+                    <span id="live-status-text" class="status-text">Initializing pipeline...</span>
+                    <span class="status-time">~60 seconds</span>
+                </div>
+                <div class="cancel-wrapper">
+                    <button type="button" id="cancel-btn" class="btn-text-muted">Cancel</button>
+                </div>
+            </div>
+            
+            <!-- Error Panel -->
+            <div id="error-panel" class="error-card hidden">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <div class="error-content">
+                    <p id="error-message">Something went wrong generating the pitch. Please try again.</p>
+                </div>
+                <div class="error-actions">
+                    <button type="button" id="retry-btn" class="btn-primary btn-sm">Retry</button>
+                    <a href="#" class="btn-text-link">Report issue</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="results-container hidden">
+            <div class="deck-card">
+                <div class="deck-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <div class="deck-info">
+                    <h3>Pitch Deck Ready</h3>
+                    <p id="deck-meta" class="text-small">Marsh_Pitch.pptx • 5 slides • Generated in 104s</p>
+                </div>
+                <div class="deck-actions">
+                    <a href="#" id="download-deck-btn" class="btn-primary" download>⬇ Download .pptx</a>
+                    <button type="button" id="generate-another-btn" class="btn-text-link">Generate another →</button>
+                </div>
+            </div>
+
+            <div class="audit-section">
+                <div class="audit-header">
+                    <div class="audit-title-row">
+                        <h2>Audit Report</h2>
+                        <div id="overall-badge" class="badge-pill">PASS ✓</div>
+                        <span id="overall-confidence" class="text-small">0.0% confidence</span>
+                    </div>
+                    
+                    <!-- Proportional Bar -->
+                    <div class="proportional-bar" id="audit-bar">
+                        <div class="bar-segment bar-pass" style="width: 0%" title="Supported"></div>
+                        <div class="bar-segment bar-partial" style="width: 0%" title="Partially Supported"></div>
+                        <div class="bar-segment bar-fail" style="width: 0%" title="Unsupported"></div>
+                        <div class="bar-segment bar-unknown" style="width: 0%" title="Unverifiable"></div>
+                    </div>
+                    <div class="bar-legend" id="audit-legend">
+                        <!-- Legend items injected via JS -->
+                    </div>
+                </div>
+
+                <div id="audit-claims-list" class="claims-list">
+                    <!-- Claims injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Panel -->
+        <details class="admin-panel">
+            <summary class="admin-toggle">⚙ Admin: Upload Policy Document ›</summary>
+            <div class="admin-content">
+                <form id="upload-form" class="upload-form">
+                    <div class="file-drop-zone">
+                        <input type="file" id="policy-file" accept="application/pdf" required>
+                        <p>Drop PDF here, or click to browse</p>
+                    </div>
+                    <button type="submit" class="btn-outline">Upload</button>
+                </form>
+            </div>
+        </details>
+    </main>
+    <script src="/static/app.js"></script>
+</body>
+</html>

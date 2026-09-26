@@ -1,0 +1,97 @@
+--- PAGE 1 ---
+2026
+India Knowledge Services Mumbai
+Data Science Team
+Marsh Case Study – Internship
+
+--- PAGE 2 ---
+Case Study & Background
+Case Study
+–
+A Client Advisor at Marsh wants to accelerate the creation 
+of client-specific marketing pitches for insurance policies.
+–
+You are hired as a consultant to build a UI-driven, AI-
+powered application.
+–
+The application generates a tailored marketing pitch 
+presentation for any client company.
+–
+The pitch must be grounded in the 4 medical policy 
+documents shared with you.
+Background
+–
+Advisors spend significant time manually researching client 
+companies and curating policy content for pitches.
+–
+Policy documents outline coverage, benefits, exclusions 
+and pricing that must be accurately reflected.
+–
+Inaccurate or unsupported coverage claims create 
+commercial and compliance risk for the firm.
+–
+A tool is needed where an advisor inputs a company name 
+and instantly gets an accurate, well-structured pitch 
+grounded in policy documents — with confidence the AI 
+content has been checked.
+Copyright © 2026 Marsh USA LLC. All rights reserved.
+2
+
+--- PAGE 3 ---
+Challenge 1: Build the AI-Powered Pitch Generator
+Develop a UI-driven application that generates a client-specific marketing pitch for Marsh’s insurance 
+policies.
+●
+Objective 1.1 — UI: input field for company name, ability to select/upload policy document(s) as baseline, and a generate 
+button.
+●
+Objective 1.2 — generateCompanyProfile(company_name): gathers company info (industry, size, key risks); falls back to 
+clearly-labelled assumptions if data is unavailable.
+●
+Objective 1.3 — generateMarketingPitch(): produces a 3–5 slide deck covering company overview, why choose Marsh, 
+policy benefits mapped to exposures, and one final recommended policy.
+●
+Objective 1.4 — input validation and error handling for missing company name, missing documents, or generation failures.
+Copyright © 2026 Marsh USA LLC. All rights reserved.
+3
+
+--- PAGE 4 ---
+Challenge 2: Audit the AI-Generated Content
+AI-generated pitch content carries a risk of inaccurate, unsupported or fabricated claims about policy 
+coverage ("hallucination").
+●
+Before any pitch reaches a client, the firm needs confidence every benefit and figure is grounded in the source policy 
+documents.
+●
+Objective 2.1 — build an auditing layer that traces each claim to a specific policy clause and flags untraceable statements 
+for human review.
+●
+Objective 2.1 (cont.) — produce an audit summary (e.g. confidence score or pass/fail flag) alongside the generated deck.
+●
+Objective 2.2 — implement auditPitchContent(pitch_slides, policy_docs) returning a structured audit report, and describe 
+how the advisor uses it to approve, edit, or reject the pitch.
+Copyright © 2026 Marsh USA LLC. All rights reserved.
+4
+
+--- PAGE 5 ---
+Expected Submissions
+Deliverable
+Description
+Working application
+UI + backend/notebook code implementing the pitch generator and audit layer.
+Sample pitch deck
+At least one generated 3–5 slide PowerPoint pitch for a chosen company.
+Audit results
+Audit report/output for the sample deck(s), showing traceability of claims to 
+source policy documents.
+Write-up
+Short Word/PDF summary covering approach, tools/libraries used, and key 
+design decisions.
+Copyright © 2026 Marsh USA LLC. All rights reserved.
+5
+
+--- PAGE 6 ---
+Thank You
+advisors@marsh.com  |  www.marsh.com
+Marsh Risk s part of Marsh. This document is for informational purposes only.
+

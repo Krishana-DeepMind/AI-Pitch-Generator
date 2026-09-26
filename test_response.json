@@ -1,0 +1,7 @@
+{
+  "detail": {
+    "error": "Generation failed",
+    "detail": "An error occurred while generating the pitch: No LLM API keys configured. Set GROQ_API_KEY or OPENROUTER_API_KEY.",
+    "error_type": "generation_failure"
+  }
+}

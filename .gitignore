@@ -1,0 +1,8 @@
+.env
+pitch-gen/
+__pycache__/
+*.pyc
+generated_decks/
+audit_reports/
+data/policy_embeddings.pkl
+.DS_Store

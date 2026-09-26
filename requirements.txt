@@ -1,0 +1,33 @@
+# Core web framework
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+
+# PDF parsing
+PyMuPDF==1.25.5
+
+# Embeddings (ONNX, runs locally)
+fastembed==0.6.1
+
+# LLM providers
+groq==0.25.0
+httpx==0.28.1
+
+# Deck generation
+python-pptx==1.0.2
+
+# Vector math
+numpy==2.2.6
+
+# Data models & settings
+pydantic==2.11.3
+pydantic-settings==2.9.1
+python-dotenv==1.1.0
+
+# Supabase (for persistent vector storage)
+supabase==2.15.2
+
+# File uploads
+python-multipart==0.0.20
+
+# Utilities
+tenacity==9.1.2

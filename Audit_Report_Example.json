@@ -1,0 +1,106 @@
+{
+  "company_name": "Tata Consultancy Services",
+  "total_claims": 8,
+  "supported_claims": 7,
+  "partially_supported_claims": 0,
+  "unsupported_claims": 1,
+  "unverifiable_claims": 0,
+  "overall_confidence": 0.875,
+  "overall_pass": false,
+  "slide_audits": [
+    {
+      "slide_number": 1,
+      "slide_title": "Understanding TCS: The Health Profile of a High-Pressure IT Workforce",
+      "claims": [],
+      "slide_pass": true
+    },
+    {
+      "slide_number": 2,
+      "slide_title": "The Marsh Advantage: Advisory Expertise & Global Advocacy",
+      "claims": [
+        {
+          "claim_text": "The group medical scheme is tailored to the specific demographic and risk profile of the employee base.",
+          "verdict": "supported",
+          "confidence_score": 0.6555935740470886,
+          "source_clause": "llness along with Group Health Insurance and Group Personal Accident Insurance for Corporates, Micro Insurance Products for the Rural Market and a Comprehensive Set of Wellness Services. With its \noperating philosophy being based on the principal tenet of \u2018consumer-centricity\u2019, the company has consi",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.6555935740470886,
+          "verification_method": "cosine_similarity",
+          "notes": "High similarity match (score: 0.656)"
+        },
+        {
+          "claim_text": "The employee base consists of 500,000+ employees.",
+          "verdict": "unsupported",
+          "confidence_score": 1.0,
+          "source_clause": "10\nPlan Name Optima Secure+ Base Sum Insured (in Lakhs) 10/15/20/25/50/100/200 Room Rent\nAt actuals Secure Bene\ufb01t 100% of base sum insured Emergency Ambulance Road: Up to sum insured Air: Up to INR 5,00,000 Protect Bene\ufb01t# Up to sum insured In\ufb01nite Bene\ufb01t* Irrespective of claim status, 100% of base ",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.530142605304718,
+          "verification_method": "llm_verification",
+          "notes": "The provided policy excerpts discuss insurance plan details such as sum insured, benefits, and terms for HDFC and ABHI products. They do not contain any information regarding the number of employees in the employee base."
+        },
+        {
+          "claim_text": "The policy provides advocacy during claims to ensure fair and timely settlements.",
+          "verdict": "supported",
+          "confidence_score": 0.6227032542228699,
+          "source_clause": "ure I (list I, II, III and IV) of Policy T&C that are non-payable shall be covered up to Sum Insured Unlimited Care6 Any one claim during the lifetime of the policy without any limit on sum insured",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.6227032542228699,
+          "verification_method": "cosine_similarity",
+          "notes": "High similarity match (score: 0.623)"
+        },
+        {
+          "claim_text": "The policy covers complex chronic health issues.",
+          "verdict": "supported",
+          "confidence_score": 0.7144558429718018,
+          "source_clause": "Disability ABCD Chronic Care Covers hospitalisation expenses for Asthma, Blood pressure, Cholesterol and Diabetes from the 31st day my: health Critical Illness Lumpsum payout on diagnosis of a listed critical illness",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7144558429718018,
+          "verification_method": "cosine_similarity",
+          "notes": "High similarity match (score: 0.714)"
+        },
+        {
+          "claim_text": "The policy covers travel-related health issues.",
+          "verdict": "supported",
+          "confidence_score": 0.6837784647941589,
+          "source_clause": "n & SI opted, please refer the PBT/Policy wordings for the applicability and details about the plan. ##Tax bene\ufb01ts are subject to changes in tax laws. Please consult your tax advisors for tax bene\ufb01ts. T&C Apply. \nWHEN IT COMES TO YOUR HEALTH, ACTIV ONE VIP+ PLAN GIVES YOU THE WORLD HAS TO OFFER GET ",
+          "source_document": "ABHI Product Brochure",
+          "source_chunk_similarity": 0.6837784647941589,
+          "verification_method": "cosine_similarity",
+          "notes": "High similarity match (score: 0.684)"
+        },
+        {
+          "claim_text": "The policy supports consistent healthcare access across domestic and international business trips.",
+          "verdict": "supported",
+          "confidence_score": 0.6245793104171753,
+          "source_clause": "to migrate to similar indemnity health insurance policy available at the time of renewal subject to underwriting with all the accrued continuity bene\ufb01ts, waiver of waiting period, etc. ; \nprovided the policy has been maintained without a break as per portability/migration guidelines issued by IRDAI.",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.6245793104171753,
+          "verification_method": "cosine_similarity",
+          "notes": "High similarity match (score: 0.625)"
+        },
+        {
+          "claim_text": "The policy includes comprehensive risk management features.",
+          "verdict": "supported",
+          "confidence_score": 0.6803330779075623,
+          "source_clause": "d to go beyond limits, o\ufb00ering enhanced coverage, In\ufb01nite Bene\ufb01t feature and complete peace of mind. Enjoy added coverage at no extra cost, rede\ufb01ning what true protection feels like, today and for the future. Introduction",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.6803330779075623,
+          "verification_method": "cosine_similarity",
+          "notes": "High similarity match (score: 0.680)"
+        },
+        {
+          "claim_text": "The policy aims to reduce productivity losses associated with employee burnout and chronic illness.",
+          "verdict": "supported",
+          "confidence_score": 0.6265159249305725,
+          "source_clause": "Disability ABCD Chronic Care Covers hospitalisation expenses for Asthma, Blood pressure, Cholesterol and Diabetes from the 31st day my: health Critical Illness Lumpsum payout on diagnosis of a listed critical illness",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.6265159249305725,
+          "verification_method": "cosine_similarity",
+          "notes": "High similarity match (score: 0.627)"
+        }
+      ],
+      "slide_pass": false
+    }
+  ],
+  "summary": "Audited 8 claims across 2 slides.\n\u2705 Supported: 7 | \u26a0\ufe0f Partially Supported: 0\n\u274c Unsupported: 1 | \u2753 Unverifiable: 0\nOverall Confidence: 88%\n\u26a0\ufe0f REVIEW NEEDED \u2014 Some claims require advisor review before client delivery."
+}
