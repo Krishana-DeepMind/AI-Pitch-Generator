@@ -29,8 +29,8 @@ class Settings(BaseSettings):
     # Paths
     policy_docs_dir: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "policy_docs")
     data_dir: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
-    generated_decks_dir: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "generated_decks")
-    audit_reports_dir: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "audit_reports")
+    generated_decks_dir: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "submission_material", "generated_decks")
+    audit_reports_dir: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "submission_material", "audit_reports")
     static_dir: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static")
     
     # Retrieval settings

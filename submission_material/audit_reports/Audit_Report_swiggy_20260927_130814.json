@@ -1,0 +1,216 @@
+{
+  "company_name": "swiggy",
+  "total_claims": 17,
+  "supported_claims": 11,
+  "partially_supported_claims": 2,
+  "unsupported_claims": 4,
+  "unverifiable_claims": 0,
+  "overall_confidence": 0.6470588235294118,
+  "overall_pass": false,
+  "slide_audits": [
+    {
+      "slide_number": 1,
+      "slide_title": "Company Overview",
+      "claims": [],
+      "slide_pass": true
+    },
+    {
+      "slide_number": 2,
+      "slide_title": "Why Choose Marsh",
+      "claims": [],
+      "slide_pass": true
+    },
+    {
+      "slide_number": 3,
+      "slide_title": "Policy Benefits Mapped to Risks",
+      "claims": [
+        {
+          "claim_text": "Day‑1 cover is provided for 7 chronic conditions (asthma, hypertension, high cholesterol, diabetes) with zero waiting period for riders with pre‑existing conditions.",
+          "verdict": "supported",
+          "confidence_score": 0.907996416091919,
+          "source_clause": "Now get Day 1 cover for listed 7 chronic conditions\nwith zero waiting period:\n• Asthma                                                         FIRST TIME IN THE INDUSTRY    •   High        Blood              Pressure                                          ADVANCED HEALTH CHECKUP    •   High       ",
+          "source_document": "ABHI Product Brochure",
+          "source_chunk_similarity": 0.907996416091919,
+          "verification_method": "cosine_similarity",
+          "notes": "High similarity match (score: 0.908)"
+        },
+        {
+          "claim_text": "The waiting period for pre‑existing diseases is limited to 36 months.",
+          "verdict": "supported",
+          "confidence_score": 1.0,
+          "source_clause": "36 months waiting period on pre‑existing diseases",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7172425985336304,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt explicitly states a 36‑month waiting period for pre‑existing diseases, matching the claim."
+        },
+        {
+          "claim_text": "A domiciliary hospitalization benefit is available as an optional add‑on for riders who may need home‑based care after road incidents.",
+          "verdict": "partially_supported",
+          "confidence_score": 0.7,
+          "source_clause": "This benefit is offered through Cumulative Bonus Booster under add‑on policy ‘Care Advanced’. This is an optional benefit and available on payment of additional premium.",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.7452700734138489,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt confirms that domiciliary hospitalization is an optional add‑on available under the ‘Care Advanced’ add‑on policy, but it does not specify that it is intended for riders needing home‑based care after road incidents. The claim adds a condition (road incidents) that is not present in the excerpt, so the support is partial."
+        },
+        {
+          "claim_text": "Care OPD and advanced care coverage provides outpatient treatment for musculoskeletal injuries and mental‑health consultations.",
+          "verdict": "unsupported",
+          "confidence_score": 0.95,
+          "source_clause": "9Care OPD is an add-on policy\nand available on payment of additional premium.\n6This benefit is under Care Advanced add-on policy and available on payment of additional premium.\n12Optional benefit under Care Supreme available on\npayment of additional premium.\nCustomer can opt either Claim Shield or C",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.7276099324226379,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt only references the existence of Care OPD and Care Advanced add-on policies and their payment conditions, but does not mention coverage for musculoskeletal injuries or mental‑health consultations."
+        },
+        {
+          "claim_text": "The HDFC ERGO cashless network includes approximately 16,000 providers and has a 98% claim payout ratio.",
+          "verdict": "supported",
+          "confidence_score": 1.0,
+          "source_clause": "~16,000 cashless healthcare provider network##\n98% health claims payout ratio~",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.8098995685577393,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt explicitly states approximately 16,000 cashless healthcare providers and a 98% health claims payout ratio, matching the claim."
+        }
+      ],
+      "slide_pass": false
+    },
+    {
+      "slide_number": 4,
+      "slide_title": "Coverage Comparison",
+      "claims": [
+        {
+          "claim_text": "Care Health (Care Supreme) has a 36‑month pre‑existing disease waiting period.",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "Pre-Existing Diseases 36 months",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.7238649725914001,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt explicitly states that Care Health’s pre‑existing disease waiting period is 36 months."
+        },
+        {
+          "claim_text": "Care Health (Care Supreme) offers an optional domiciliary add‑on.",
+          "verdict": "unsupported",
+          "confidence_score": 0.95,
+          "source_clause": "under Domiciliary Hospitalization\n*This benefit is offered through Cumulative Bonus Booster under add-on policy ‘Care Advanced’. This is an optional benefit and available on payment of additional premium.\n1Through healthy days program under wellness benefit (optional cover) on payment of additional ",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.730819046497345,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt does not state that Care Supreme offers an optional domiciliary add‑on; it mentions domiciliary hospitalization under Care Advanced and optional benefits under Care Supreme, but not a domiciliary add‑on for Care Supreme."
+        },
+        {
+          "claim_text": "Care Health (Care Supreme) covers OPD and advanced care.",
+          "verdict": "unsupported",
+          "confidence_score": 0.95,
+          "source_clause": "Care OPD is an add‑on policy and available on payment of additional premium.\nThis benefit is under Care Advanced add‑on policy and available on payment of additional premium.",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.7980053424835205,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt indicates that OPD and advanced care are available only as add‑on policies requiring additional premium, not as standard coverage under Care Supreme."
+        },
+        {
+          "claim_text": "ABHI provides Day‑1 cover for 7 chronic conditions.",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "Now get Day 1 cover for listed 7 chronic conditions with zero waiting period",
+          "source_document": "ABHI Product Brochure",
+          "source_chunk_similarity": 0.7669618129730225,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt explicitly states that ABHI offers Day‑1 cover for 7 chronic conditions with zero waiting period."
+        },
+        {
+          "claim_text": "ABHI has zero waiting period for listed illnesses.",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "Now get Day 1 cover for listed 7 chronic conditions with zero waiting period:",
+          "source_document": "ABHI Product Brochure",
+          "source_chunk_similarity": 0.6127638220787048,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt explicitly states that ABHI offers Day 1 cover for listed chronic conditions with zero waiting period."
+        },
+        {
+          "claim_text": "HDFC ERGO Optima Secure+ includes an Infinite Benefit that adds 100% of the base sum insured.",
+          "verdict": "supported",
+          "confidence_score": 0.99,
+          "source_clause": "Inﬁnite Beneﬁt* 100% of base sum insured added",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.8149279356002808,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt explicitly states that the Infinite Benefit adds 100% of the base sum insured, directly supporting the claim."
+        },
+        {
+          "claim_text": "HDFC ERGO Optima Secure+ has 16,000 cashless providers.",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "~16,000 cashless healthcare provider network##",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7667891979217529,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt explicitly states \"~16,000 cashless healthcare provider network\", which directly supports the claim that HDFC ERGO Optima Secure+ has 16,000 cashless providers."
+        },
+        {
+          "claim_text": "HDFC ERGO Optima Secure+ has a 98% payout ratio.",
+          "verdict": "supported",
+          "confidence_score": 0.95,
+          "source_clause": "98% health claims payout ratio~",
+          "source_document": "HDFC Product Brochure",
+          "source_chunk_similarity": 0.7846132516860962,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt explicitly states a 98% health claims payout ratio for HDFC ERGO Optima Secure+, directly supporting the claim."
+        }
+      ],
+      "slide_pass": false
+    },
+    {
+      "slide_number": 5,
+      "slide_title": "Recommended Policy",
+      "claims": [
+        {
+          "claim_text": "36‑month pre‑existing disease waiting period aligns with long‑term rider contracts",
+          "verdict": "supported",
+          "confidence_score": 0.99,
+          "source_clause": "36 months waiting period on pre-existing diseases",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.7483333349227905,
+          "verification_method": "llm_verification",
+          "notes": "The policy excerpt explicitly states a 36‑month waiting period for pre‑existing diseases, matching the claim."
+        },
+        {
+          "claim_text": "Day‑1 cover for asthma, hypertension, high cholesterol, diabetes eliminates delay for chronic conditions common in high‑stress roles",
+          "verdict": "supported",
+          "confidence_score": 0.8551040291786194,
+          "source_clause": "Now get Day 1 cover for listed 7 chronic conditions\nwith zero waiting period:\n• Asthma                                                         FIRST TIME IN THE INDUSTRY    •   High        Blood              Pressure                                          ADVANCED HEALTH CHECKUP    •   High       ",
+          "source_document": "ABHI Product Brochure",
+          "source_chunk_similarity": 0.8551040291786194,
+          "verification_method": "cosine_similarity",
+          "notes": "High similarity match (score: 0.855)"
+        },
+        {
+          "claim_text": "Optional domiciliary hospitalization add‑on supports home‑based recovery after road accidents",
+          "verdict": "partially_supported",
+          "confidence_score": 0.7,
+          "source_clause": "This benefit is offered through Cumulative Bonus Booster under add‑on policy ‘Care Advanced’. This is an optional benefit and available on payment of additional premium.",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.7101426124572754,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt confirms that domiciliary hospitalization is an optional add‑on available with additional premium, but it does not explicitly state that it supports home‑based recovery specifically after road accidents. The mention of road ambulance coverage is related but not the same as home‑based recovery."
+        },
+        {
+          "claim_text": "Included OPD & advanced care coverage addresses musculoskeletal and mental‑health needs",
+          "verdict": "unsupported",
+          "confidence_score": 0.95,
+          "source_clause": "9Care OPD is an add-on policy\nand available on payment of additional premium.\n6This benefit is under Care Advanced add-on policy and available on payment of additional premium.\n12Optional benefit under Care Supreme available on\npayment of additional premium.\nCustomer can opt either Claim Shield or C",
+          "source_document": "Care Health Product Brochure",
+          "source_chunk_similarity": 0.7421943545341492,
+          "verification_method": "llm_verification",
+          "notes": "The excerpt references OPD and advanced add-on coverage but does not mention musculoskeletal or mental‑health needs. Therefore the claim is not supported by the provided text."
+        }
+      ],
+      "slide_pass": false
+    }
+  ],
+  "summary": "Audited 17 claims across 5 slides.\n✅ Supported: 11 | ⚠️ Partially Supported: 2\n❌ Unsupported: 4 | ❓ Unverifiable: 0\nOverall Confidence: 65%\n⚠️ REVIEW NEEDED — Some claims require advisor review before client delivery."
+}
